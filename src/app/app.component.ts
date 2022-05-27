@@ -18,9 +18,9 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 export class AppComponent {
   downloadUrl: SafeUrl;
   constructor(private sanitizer: DomSanitizer) {
-    var content = 'Hallo world!'; // Content to transfer
-    const mediatype = 'text/plain'; // media type (consider also '/text/json;base64')
-    //    content = encodeURIComponent(content); // Url encode content (needed for JSON)
+    var content = '["Hallo", "world!"]'; // Content to transfer
+    const mediatype = 'text/json;base64'; // media type (consider also '/text/json;base64')
+    content = encodeURIComponent(content); // Url encode content (needed for JSON)
     this.downloadUrl = this.sanitizer.bypassSecurityTrustUrl(
       'data:' + mediatype + ',' + content
     );
