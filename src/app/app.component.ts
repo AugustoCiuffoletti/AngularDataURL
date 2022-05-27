@@ -21,7 +21,7 @@ export class AppComponent {
   constructor(private sanitizer: DomSanitizer) {
     var content = 'Hallo world!'; // Content to transfer
     const mediatype = 'text/plain'; // media type (consider also '/text/json;base64')
-    //    content = encodeURIComponent(content); // Url encode content (needed for JSON)
+//    content = encodeURIComponent(content); // Url encode content (needed for JSON)
     this.downloadUrl = this.sanitizer.bypassSecurityTrustUrl(
       'data:' + mediatype + ',' + content
     );
